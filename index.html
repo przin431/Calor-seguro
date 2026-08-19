@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calor Seguro - Alerta e Prevenção</title>
+    <style>
+        :root {
+            --primary: #ff5722;
+            --secondary: #ff9800;
+            --dark: #2d3748;
+            --light: #f7fafc;
+            --danger: #e53e3e;
+            --success: #38a169;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card p, .card ul {
+            font-size: 0.95rem;
+            color: #4a5568;
+            margin-bottom: 1rem;
+        }
+
+        .card ul {
+            padding-left: 1.2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #e64a19;
+        }
+
+        .btn-whatsapp {
+            background-color: #25d366;
+        }
+        .btn-whatsapp:hover {
+            background-color: #1ebe5d;
+        }
+
+        /* Estilos específicos para componentes */
+        .temp-badge {
+            background: #fff5f5;
+            color: var(--danger);
+            padding: 0.5rem;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 1rem;
+            border: 1px solid #fed7d7;
+        }
+
+        .quiz-option {
+            display: block;
+            width: 100%;
+            padding: 0.5rem;
+            margin: 0.3rem 0;
+            background: #edf2f7;
+            border: 1px solid #cbd5e0;
+            border-radius: 5px;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .quiz-option:hover {
+            background: #e2e8f0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #2d3748;
+            color: white;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>☀️ Calor Seguro</h1>
+        <p>Monitoramento em tempo real, alertas e prevenção contra ondas de calor extremo</p>
+    </header>
+
+    <div class="container">
+
+        <!-- 1. Mapa de Calor -->
+        <div class="card">
+            <div>
+                <h3>🗺️ 1. Mapa de Calor em Tempo Real</h3>
+                <div class="temp-badge">Sensação Térmica Atual: 41°C (Alerta Vermelho)</div>
+                <p>Integração com INMET e sensores urbanos locais.</p>
+                <ul>
+                    <li>Bairros mais quentes: Centro e Zona Leste</li>
+                    <li>Atualizado há 5 minutos</li>
+                </ul>
+            </div>
+            <a href="#mapa" class="btn" onclick="alert('Abrindo mapa interativo completo...')">Ver Mapa Completo</a>
+        </div>
+
+        <!-- 2. Alerta de Onda de Calor -->
+        <div class="card">
+            <div>
+                <h3>📱 2. Alerta via WhatsApp</h3>
+                <p>Receba avisos instantâneos sempre que a sensação térmica ultrapassar os 40°C na sua região.</p>
+            </div>
+            <a href="https://wa.me/?text=Quero%20receber%20alertas%20do%20Calor%20Seguro" target="_blank" class="btn btn-whatsapp">Cadastrar no WhatsApp</a>
+        </div>
+
+        <!-- 3. Pontos de Frescor -->
+        <div class="card">
+            <div>
+                <h3>💧 3. Pontos de Frescor</h3>
+                <p>Encontre locais climatizados e bebedouros públicos mais próximos de você:</p>
+                <ul>
+                    <li>💧 Bebedouro Praça Central</li>
+                    <li>🏥 UBS Bairro Alto (Sala climatizada)</li>
+                    <li>🏛️ Biblioteca Municipal (Ar-condicionado)</li>
+                </ul>
+            </div>
+            <a href="#frescor" class="btn" onclick="alert('Buscando pontos de frescor próximos via GPS...')">Achar Refúgio Próximo</a>
+        </div>
+
+        <!-- 4. Dicas por Perfil -->
+        <div class="card">
+            <div>
+                <h3>👥 4. Dicas por Perfil</h3>
+                <p>Orientações específicas de segurança:</p>
+                <ul>
+                    <li><strong>Idosos/Crianças:</strong> Caminhadas apenas antes das 9h e após as 18h.</li>
+                    <li><strong>Trabalhadores:</strong> Obrigatório pausas na sombra a cada 1h.</li>
+                    <li><strong>Pets:</strong> Teste o dorso da mão no asfalto antes de passear.</li>
+                </ul>
+            </div>
+            <a href="#dicas" class="btn" onclick="alert('Carregando guia completo de cuidados...')">Ver Todas as Dicas</a>
+        </div>
+
+        <!-- 5. Teste de Desidratação -->
+        <div class="card" id="quiz-card">
+            <div>
+                <h3>🩺 5. Teste Rápido de Hidratação</h3>
+                <p id="quiz-pergunta">Você está sentindo tontura ou boca muito seca agora?</p>
+                <button class="quiz-option" onclick="responderQuiz(true)">Sim, estou</button>
+                <button class="quiz-option" onclick="responderQuiz(false)">Não, estou bem</button>
+            </div>
+            <button class="btn" style="margin-top: 1rem;" onclick="ativarLembrete()">Ativar Lembrete de Água</button>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Calor Seguro. Salvando vidas através da prevenção urbana.</p>
+    </footer>
+
+    <script>
+        function responderQuiz(comSintoma) {
+            const card = document.getElementById('quiz-card');
+            if (comSintoma) {
+                alert('⚠️ Atenção: Seus sintomas indicam risco leve/moderado de desidratação. Beba um copo grande de água imediatamente e descanse na sombra!');
+            } else {
+                alert('✅ Ótimo! Continue se hidratando regularmente ao longo do dia.');
+            }
+        }
+
+        function ativarLembrete() {
+            alert('🔔 Sucesso! Um alarme foi configurado para lembrar você de beber água a cada 1 hora.');
+        }
+    </script>
+
+</body>
+</html>
